@@ -1,0 +1,52 @@
+{% extends "app_beans_and_cream_cafe/base.html" %}
+
+{% block content %}
+    <div class="container">
+    <h2 style="text-align: center;
+                font-size: 70px;
+                font-weight: 700;
+                text-transform: uppercase; /* Changed to uppercase for emphasis */
+                font-style: normal;
+                text-decoration: underline; /* Added underline for emphasis */
+                line-height: 1em;
+                letter-spacing: -2px; /* Slightly reduced letter spacing */
+                margin-top: 50px;
+                margin-bottom: 50px;
+                color: #ffbfce; /* Changed text color to pink */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow for depth */
+                font-family: 'Roboto', sans-serif; /* Changed font to Roboto for a modern look */
+                ">
+        Products
+    </h2>
+</div>
+
+        <div class="row">
+            {% for product in product_list %}
+                <div class="col-6 my-4">
+                    <div class="card">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }} Image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.description }}</p>
+                        <p class="card-text">price(lei): {{ product.price_lei }}</p>
+                        <p class="card-text">tip bautura: {{ product.drink_type }}</p>
+                        <p class="card-text">gramaj(ml): {{ product.gramaj_ml}}</p>
+                        <a href="/product/{{ product.id }}">
+                            <button class="btn-custom spaced-top-2">See details</button>
+                        </a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'app_beans_and_cream_cafe:add_to_cart' product_id=product.id %}">
+                                <button class="btn-custom-reverse spaced-top-2">Add to cart</button>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:2 and not forloop.last %}
+                    </div></div><div class="container"><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

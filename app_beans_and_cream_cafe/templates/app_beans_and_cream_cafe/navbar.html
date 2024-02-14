@@ -1,0 +1,37 @@
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid container">
+    <a class="navbar-brand brand-logo" href="/">Beans and cream cafe </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'app_beans_and_cream_cafe:products' %}">Products</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'app_beans_and_cream_cafe:contact' %}">Contact</a>
+          {% if user.is_authenticated %}
+            <a class="nav-link" href="{#}" title="Deautentificare"> Hi, {{user.username}}
+              <i class="fas fa-user"></i>
+            </a>
+            <form class="nav-link" action="{% url 'logout' %}" method="POST">
+              {% csrf_token %}
+              <button class="logout-button" type="submit">
+                <i class="fas fa-sign-out-alt"></i>
+              </button>
+            </form>
+            <a class="nav-link" href="{% url 'app_beans_and_cream_cafe:cart' %}" title="Coșul tău">
+              <i class="fa-solid fa-shopping-cart"></i>
+            </a>
+          {% else %}
+            <a class="nav-link" href="{% url 'account:login' %}" title="Autentificare">
+              <i class="fa-solid fa-sign-in-alt"></i>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+{% endblock %}

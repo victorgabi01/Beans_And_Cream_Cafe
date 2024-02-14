@@ -1,0 +1,124 @@
+
+
+.navbar{
+    background-color: #038d1e !important;
+}
+
+.logout-button{
+    background-color: #038d1e;
+    border:#A45004;
+}
+
+.heading-title {
+    color: #FFFFFF;
+    font-size: 88px;
+    font-weight: 700;
+    text-transform: none;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 1em;
+    letter-spacing: -4px;
+    align-items: center;
+    animation: neonEffect 1.5s infinite alternate; /* adăugare efect animat */
+}
+
+@keyframes neonEffect {
+    0% {
+        text-shadow: 0 0 5px #a97b05, 0 0 10px #a97b05, 0 0 15px #a97b05;
+    }
+    100% {
+        text-shadow: 0 0 5px #8a280d, 0 0 10px #8a280d, 0 0 15px #8a280d;
+    }
+}
+
+
+.spaced-top-5 {
+    margin-top: 5em;
+}
+
+.spaced-top-2 {
+    margin-top: 2em;
+}
+
+.btn-custom {
+    font-weight: bold;
+    background-color: #038d1e;
+    padding: 10px 40px;
+    border-radius: 20px;
+    border: 2px solid #FFFFFF;
+    color: #f9b4fe;
+}
+
+.btn-custom:hover {
+    background-color: #FFFFFF;
+    color: #822739;
+}
+
+.btn-custom-reverse {
+    font-weight: bold;
+    background-color: #FFFFFF;
+    padding: 10px 40px;
+    border-radius: 20px;
+    border: 2px solid #A45004;
+    color: #A45004;
+}
+
+.btn-custom-reverse:hover {
+    background-color: #038d1e;
+    color: #FFFFFF;
+}
+
+.brand-logo {
+    color: #FFFFFF;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+body {
+    background-image: url('font.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+}
+
+.table {
+    border-collapse: collapse; /* Collapse borders to remove spacing between cells */
+    width: 100%; /* Ensure the table fills its container */
+}
+
+.table th, .table td {
+    border: 2px solid #000000; /* Add a solid border to table headers and data cells */
+    padding: 8px; /* Add padding to improve readability */
+    text-align: left; /* Align text to the left within cells */
+}
+
+.table th {
+    background-color: #038d1e; /* Add a background color to table headers */
+    color: #FFFFFF; /* Set text color for table headers */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #038d1e; /* Add a background color to even rows for better contrast */
+}
+
+.table tbody tr:hover {
+    background-color: #91b9ff; /* Change background color of row on hover for interactive feel */
+}
+
+.table tfoot td {
+    border: none; /* Remove border from footer cells */
+}
+
+.btn-custom {
+    font-weight: bold;
+    background-color: #038d1e; /* Use the same color as table headers for button background */
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    color: #fff; /* Set text color to white */
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    background-color: #2980b9; /* Darken button background color on hover */
+}
